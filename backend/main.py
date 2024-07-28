@@ -55,8 +55,7 @@ async def home():
 
 @app.get("/getnft")
 async def get_nft():
-    COLLECTION_ID = os.environ.get("COLLECTION_ID")
-    return {"data": COLLECTION_ID}
+    return {"data": 3238}
 
 @app.post("/signup")
 async def signup(user: User):
