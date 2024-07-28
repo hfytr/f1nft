@@ -2,14 +2,23 @@
     import { Section, Register } from 'flowbite-svelte-blocks';
     import { Button, Checkbox, Label, Input, Modal } from 'flowbite-svelte';
     import { login, setCurrUser } from '$lib/api';
+    import { metaMaskAuth } from '$lib/metamask';
+    import Metamaskauth from '../Metamaskauth.svelte';
 
     let defaultModal = false;
+    let openMetaMask = false;
 </script>
+
+<Modal bind:open={openMetaMask}>
+    <Metamaskauth></Metamaskauth>
+</Modal>
 
 <Modal title="Terms of Service" bind:open={defaultModal} autoclose>
     <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Successfully logged in!</p>
     <svelte:fragment slot="footer">
-      <Button color="purple"><a href="/">Go to your home page!</a></Button>
+      <Button color="purple" on:click={() => {
+        openMetaMask = true;
+      }}>Authenticate with MetaMask</Button>
     </svelte:fragment>
 </Modal>
   
