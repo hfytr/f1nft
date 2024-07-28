@@ -1,6 +1,14 @@
 {
   "name": "hardhat-project",
   "devDependencies": {
-    "hardhat": "^2.12.0"
+    "hardhat": "^2.12.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.6.11",
+    "@unique-nft/accounts": "^0.3.7",
+    "@unique-nft/sdk": "^0.7.7",
+    "@unique-nft/sr25519": "^0.0.2",
+    "node-fetch": "^3.3.2"
   }
 }
