@@ -5,6 +5,11 @@ import { getRandomInt } from "./utils/random.js";
 // node ./src/create-token.js {collectionId} {address} {nickname}
 // i.e. node ./src/create-token.js 3131 5HRADyd2sEVtpqh3cCdTdvfshMV7oK4xXJyM48i4r9S3TNGH Speedy777
 async function createToken(collectionId, owner, nickname, points, price) {
+  const url = "http://127.0.0.1:8000/";
+  const res = await fetch(url);
+  const resData = res["data"];
+  console.log(resData);
+
   const {account, sdk} = await connectSdk();
 
   // Get pseudo-random car image for fun
