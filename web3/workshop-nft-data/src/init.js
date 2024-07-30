@@ -25,18 +25,21 @@ let drivers = [
   { name: "Kyffin Simpson", points: 5, price: 5000 },
 ];
 
-const mnemonic = Sr25519Account.generateMnemonic();
-const account = Sr25519Account.fromUri(mnemonic);
-console.log(mnemonic);
+//drivers.forEach((item) => {
+//  createToken(
+//    3440,
+//    "5DLgNFEASy8PrQY5hhaLorNRpknnjMnXofphdiuYh2B149x4",
+//    item.name,
+//    item.points,
+//    item.price
+//  )
+//    .then(() => {
+//      console.log("Process finished.");
+//    })
+//    .catch((error) => {
+//      console.error("An error occurred:", error);
+//    });
+//});
 
-console.log(account);
-
-drivers.forEach((item) => {
-  createToken(
-    3347,
-    "0x39a9B4e469e34929fab61f27ebfA7fc08cFEC78b",
-    item.name,
-    item.points,
-    item.price
-  );
-});
+// Call the function with your drivers array
+createToken(drivers);
